@@ -13,10 +13,10 @@
             <img src="{% static 'img/process.gif' %}" alt="processing">
         </div>
         <div class="header-before">
-            Processing Payment...
+            Processando o pagamento...
         </div>
         <div class="below-header">
-            Please wait while we are processing your payment.
+            Aguarde enquanto processamos seu pagamento.
         </div>
     </section>
     <input type="hidden" class="ref1" value="{{ticket1.ref_no}}">
@@ -28,22 +28,22 @@
             </svg>
         </div>
         <div class="header-after">
-            Congratulations, Your flight booking is confirmed.
+            Parabéns, sua reserva de voo está confirmada.
         </div>
         <div class="details-div">
-            <div class="flight1">Booking Ref. Number: &nbsp;<span class="ref">{{ticket1.ref_no}}</span>&nbsp;&nbsp;&nbsp;(<span class="from1">{{ticket1.flight.origin.code}}</span> <span>&#8594;</span> <span class="to1">{{ticket1.flight.destination.code}}</span>)</div>
-            <div class="flight2">Booking Ref. Number: &nbsp;<span class="ref">{{ticket2.ref_no}}</span>&nbsp;&nbsp;&nbsp;(<span class="from2">{{ticket2.flight.origin.code}}</span> <span>&#8594;</span> <span class="to2">{{ticket2.flight.destination.code}}</span>)</div>
+            <div class="flight1">Ref. Numero Da Reserva: &nbsp;<span class="ref">{{ticket1.ref_no}}</span>&nbsp;&nbsp;&nbsp;(<span class="from1">{{ticket1.flight.origin.code}}</span> <span>&#8594;</span> <span class="to1">{{ticket1.flight.destination.code}}</span>)</div>
+            <div class="flight2">Ref. Numero Da Reserva: &nbsp;<span class="ref">{{ticket2.ref_no}}</span>&nbsp;&nbsp;&nbsp;(<span class="from2">{{ticket2.flight.origin.code}}</span> <span>&#8594;</span> <span class="to2">{{ticket2.flight.destination.code}}</span>)</div>
         </div>
         <div class="ticket-div">
             <div>
                 <form action="{% url 'getticket' %}" method="get" target="_blank">
                     <input type="hidden" name="ref" value="{{ticket1.ref_no}}">
-                    <button type="submit" class="btn btn-outline-primary">Print Ticket ({{ticket1.flight.origin.code}} to {{ticket1.flight.destination.code}})</button>
+                    <button type="submit" class="btn btn-outline-primary">Imprimir Passagem ({{ticket1.flight.origin.code}} to {{ticket1.flight.destination.code}})</button>
                 </form>
                 {% if ticket2 %}
                     <form action="{% url 'getticket' %}" method="get" target="_blank">
                         <input type="hidden" name="ref" value="{{ticket2.ref_no}}">
-                        <button type="submit" class="btn btn-outline-primary">Print Ticket ({{ticket2.flight.origin.code}} to {{ticket2.flight.destination.code}})</button>
+                        <button type="submit" class="btn btn-outline-primary">Imprimir Passagem ({{ticket2.flight.origin.code}} to {{ticket2.flight.destination.code}})</button>
                     </form>
                 {% endif %}
             </div>
@@ -56,13 +56,13 @@
             </svg>
         </div>
         <div class="header-after star">
-            There was an error while processing the payment.
+            Ocorreu um erro ao processar o pagamento.
         </div>
         <div class="below-header">
-            Please retry after sometime.
+            Por favor, tente novamente depois de algum tempo.
         </div>
         <div class="ticket-div">
-            <button class="btn btn-outline-primary" type="button" onclick="window.location.href = '/'">Go Home</button>
+            <button class="btn btn-outline-primary" type="button" onclick="window.location.href = '/'">Voltar ao Home</button>
         </div>
     </section>
 {% endblock %}

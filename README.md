@@ -1,63 +1,48 @@
-# Flight
+# LinkU
 
-A flight booking Django application written in Python, HTML, CSS & Javascript.
-This is the capstone project for CS50's Web Programming with Python and Javascript.
+Um aplicativo Django de reserva de voo escrito em Python, HTML, CSS e Javascript.
+Este é o projeto principal para a Programação Web para faculdade 
 
-[Watch on Youtube](https://www.youtube.com/watch?v=3tD4OsuGmoo)
+### Características
+1. Os usuários podem criar sua conta de usuário.
+2. Os usuários podem reservar passagens de ida e ida e volta.
+3. As páginas da Web são responsivas a dispositivos móveis.
+4. Os usuários podem cancelar suas passagens reservados.
+5. Os usuários podem visualizar suas passagens previamente reservadas (tanto as confirmadas como canceladas).
+6. As passagens podem ser baixados como documento pdf.
 
-### Features
-1. Users can create their user account.
-2. Users can book both one-way as well as round-trip tickets.
-3. Webpages are mobile responsive.
-4. Users can cancel their booked tickets.
-5. Users can view their previously booked tickets (Both confirmed and cancelled tickets).
-6. Tickets are downloadable as pdf document.
-7. As-you-type Search
+### Arquivos & Diretórios
+  - `capstone` - diretório do projeto.
+    - `utils.py` - Contém todas as funções auxiliares do Django usadas em views.py.
+    - `urls.py` - Este arquivo lida com todas as URLs do projeto.
+  - `flight` - diretório principal do aplicativo.
+    - `static` - contém todo o conteúdo estático.
+        - `css` - Contém todos os arquivos css para estilizar as páginas da web..
+        - `js` - Contém todos os arquivos javascript usados ​​no aplicativo.
+        - `img` - Contém todos os arquivos de imagem usados ​​no aplicativo.
+    - `templates/flight` Contém todos os modelos de aplicativo.
+        - `book.html` - Modelo para mostrar o voo selecionado e ler os dados dos viajantes.
+        - `bookings.html` - Modelo para mostrar reservas feitas por um usuário.
+        - `index.html` - Modelo de página inicial.
+        - `layout.html` - Modelo base para todas as páginas, exceto a página de login e registro.
+        - `layout2.html` - Modelo base para página de login e registro.
+        - `login.html` - Página do usuário de login.
+        - `payment_process.html` - Página após a conclusão do pagamento.
+        - `payment.html` - Página de pagamento.
+        - `register.html` - Registre a página do usuário.
+        - `search.html` - Página de resultados de pesquisa de voos.
+        - `ticket.html` - Modelo para impressão de boleto (pdf).
+    - `admin.py` - Contém alguns modelos para acesso ao administrador do Django.
+    - `models.py` - Todos os modelos usados ​​no aplicativo são criados aqui.
+    - `urls.py` - Este arquivo lida com todas as URLs do aplicativo da web.
+    - `views.py` - Este arquivo contém todas as visualizações do aplicativo.
+    - `constant.py` - Este arquivo contém o valor da taxa cobrada do usuário pela reserva de passagens aéreas.
+  - `requirements.txt` - Este arquivo contém todos os pacotes python que precisam ser instalados para executar este aplicativo da web.
+  - `manage.py` - Esse arquivo é usado basicamente como um utilitário de linha de comando e para implantar, depurar ou executar nosso aplicativo da web.
 
-### Files & Directories
-  - `capstone` - project directory.
-    - `utils.py` - Contains all Django helper functions used in views.py.
-    - `urls.py` - This file handles all the URLs of the project.
-  - `flight` - main application directory.
-    - `static` - contains all static content.
-        - `css` - Contains all css files for styling the webpages.
-        - `js` - Contains all javascript files used in the application.
-        - `img` - Contains all image files used in the application.
-    - `templates/flight` Contains all application templates.
-        - `book.html` - Template for showing selected flight and reading Travellers data.
-        - `bookings.html` - Template for showing bookings done by a user.
-        - `index.html` - Home page template.
-        - `layout.html` - Base template for all pages except login & register page.
-        - `layout2.html` - Base template for login & register page.
-        - `login.html` - Login user page.
-        - `payment_process.html` - Page after completion of payment.
-        - `payment.html` - Payment page.
-        - `register.html` - Register user page.
-        - `search.html` - Flight search result page.
-        - `ticket.html` - Template for printing ticket(pdf).
-    - `admin.py` - Contains some models for access to the Django administrator.
-    - `models.py` - All models used in the application are created here.
-    - `urls.py` - This file handles all the URLs of the web application.
-    - `views.py` - This file contains all the application views.
-    - `constant.py` - This file contains the fee amount which is charged to the user for booking flight tickets.
-  - `requirements.txt` - This file contains all contains all the python packages that needs to be installed to run this web application.
-  - `manage.py` - This file is used basically as a command-line utility and for deploying, debugging, or running our web application.
+### Justificativa
 
-### Justification
-
-1. Mobile responsive webpages.
-2. More complex models.
-3. More interatactive because webpages use ajax functionality (eg., fetch) written in javascript.
-4. Converts html template to downloadable pdf.
-
-### Installation
-
-- Install Python3.9 from [here](https://www.python.org/downloads/) manually.
-- Install project dependencies by running `py -m pip install -r requirements.txt`.
-- Run the commands `py manage.py makemigrations` and `py manage.py migrate` in the project directory to make and apply migrations.
-- Create superuser with `py manage.py createsuperuser`. This step is optional.
-- Run the command `py manage.py runserver` to run the web server.
-- Open web browser and goto `127.0.0.1:8000` url to start using the web application.
-
-
-Project video [https://youtu.be/3tD4OsuGmoo](https://youtu.be/3tD4OsuGmoo)
+1. Páginas da web responsivas para dispositivos móveis.
+2. Modelos mais complexos.
+3. Mais interativo porque as páginas da web usam a funcionalidade ajax (por exemplo, fetch) escrita em javascript.
+4. Converte o modelo html em pdf para download.

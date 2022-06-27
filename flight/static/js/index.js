@@ -119,26 +119,26 @@ function trip_type() {
 
 function flight_search() {
     if(!document.querySelector("#flight-from").dataset.value) {
-        alert("Please select flight origin.");
+        alert("Selecione a origem do voo.");
         return false;
     }
     if(!document.querySelector("#flight-to").dataset.value) {
-        alert("Please select flight destination.");
+        alert("Selecione o destino do voo.");
         return false;
     }
     if(document.querySelector("#one-way").checked) {
         if(!document.querySelector("#depart_date").value) {
-            alert("Please select departure date.");
+            alert("Por favor, selecione a data de partida.");
             return false;
         }
     }
     if(document.querySelector("#round-trip").checked) {
         if(!document.querySelector("#depart_date").value) {
-            alert("Please select departure date.");
+            alert("Por favor, selecione a data de partida.");
             return false;
         }
         if(!document.querySelector("#return_date").value) {
-            alert("Please select return date.");
+            alert("Por favor, selecione a data de retorno.");
             return false;
         }
     }
